@@ -1,4 +1,3 @@
-
 version: 2
 
 models:
@@ -11,11 +10,65 @@ models:
           - unique
           - not_null
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
+  - name: customer_data
+    description: "A dbt model for customer data"
     columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: customer_id
+        description: "Unique identifier for the customer"
         tests:
           - unique
           - not_null
+
+      - name: customer_name
+        description: "Name of the customer"
+        tests:
+          - not_null
+
+      - name: email
+        description: "Email address of the customer"
+        tests:
+          - not_null
+          - accepted_values: ['email']
+
+      - name: registration_date
+        description: "Date when the customer registered"
+        tests:
+          - not_null
+          - accepted_values: ['date']
+
+      - name: total_purchase_amount
+        description: "Total amount spent by the customer"
+        tests:
+          - not_null
+          - accepted_values: ['numeric']
+
+  - name: product
+    description: "A dbt model for product data"
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product"
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "Name of the product"
+        tests:
+          - not_null
+
+      - name: category
+        description: "Category of the product"
+        tests:
+          - not_null
+
+      - name: price
+        description: "Price of the product"
+        tests:
+          - not_null
+          - accepted_values: ['numeric']
+
+      - name: stock_quantity
+        description: "Stock quantity of the product"
+        tests:
+          - not_null
+          - accepted_values: ['numeric']
