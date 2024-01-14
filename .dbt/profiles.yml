@@ -1,0 +1,27 @@
+dbt_core_demo:
+  target: test
+  outputs:
+    test:
+      type: bigquery
+      method: service-account
+      project: test_project_id
+      dataset: test_dataset
+      threads: 4
+  dev: 
+  outputs: dev
+    dev:
+      type: bigquery
+      method: service-account
+      project: dev_project_id
+      dataset: dev_dataset
+      threads: 4
+  prod:
+    target: prod
+    outputs:
+      prod:
+        type: bigquery
+        method: service-account
+        project: prod_project_id
+        dataset: prod_dataset
+        threads: 4
+
