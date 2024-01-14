@@ -1,0 +1,48 @@
+[0m22:03:30.796934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CEE13FA400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CEE3D64460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CEE3D64BE0>]}
+
+
+============================== 22:03:30.802908 | 86b16671-addc-4def-b55a-c8eb011103de ==============================
+[0m22:03:30.802908 [info ] [MainThread]: Running with dbt=1.7.4
+[0m22:03:30.804044 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Polytech\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt init dbt_core_demo', 'send_anonymous_usage_stats': 'True'}
+[0m22:03:30.808066 [debug] [MainThread]: Starter project path: C:\Users\Polytech\Anaconda3\lib\site-packages\dbt\include\starter_project
+[0m22:03:30.840999 [info ] [MainThread]: 
+Your new dbt project "dbt_core_demo" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:03:30.842992 [info ] [MainThread]: Setting up your profile.
+[0m22:04:40.997097 [error] [MainThread]: Encountered an error:
+
+[0m22:04:41.014765 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Polytech\Anaconda3\lib\site-packages\dbt\cli\requires.py", line 90, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\Polytech\Anaconda3\lib\site-packages\dbt\cli\requires.py", line 75, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Polytech\Anaconda3\lib\site-packages\dbt\cli\main.py", line 515, in init
+    results = task.run()
+  File "C:\Users\Polytech\Anaconda3\lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\Polytech\Anaconda3\lib\site-packages\dbt\task\init.py", line 263, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+  File "C:\Users\Polytech\Anaconda3\lib\site-packages\dbt\task\init.py", line 244, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "C:\Users\Polytech\Anaconda3\lib\site-packages\click\termui.py", line 166, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\Polytech\Anaconda3\lib\site-packages\click\termui.py", line 149, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m22:04:41.022147 [debug] [MainThread]: Command `dbt init` failed at 22:04:41.021143 after 70.34 seconds
+[0m22:04:41.022147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CEE13FA400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CEE3D85AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CEE3D856D0>]}
+[0m22:04:41.022147 [debug] [MainThread]: Flushing usage events
